@@ -1,0 +1,29 @@
+<app-filtro-usuario [todos]="totalUsuarios" [masculino]="totalUsuariosMasculinos()" [femenino]="totalUsuariosFemeninos()" (generoSeleccionado)="obtenerFiltroGenero($event)"></app-filtro-usuario>
+
+<table class="table col-2">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Cédulas</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Género</th>
+            <th scope="col">Dirección</th>
+            <th scope="col">Teléfono</th>
+            <th scope="col">Fecha Nacimiento</th>
+            <th scope="col">Salario</th>
+        </tr>
+    </thead>
+    <tbody class="col-2">
+        <ng-container *ngFor="let usuario of listaUsuarios;">
+            <tr *ngIf="generoFiltrado==='todos' || usuario.genero===generoFiltrado" (click)="selectUsuario(usuario.cedula)">
+                <td>{{usuario.cedula}}</td>
+                <td>{{usuario.nombre}}</td>
+                <td>{{usuario.genero | genero}}</td>
+                <td>{{usuario.direccion}}</td>
+                <td>{{usuario.telefono}}</td>
+                <td>{{usuario.fechaNacimiento | date}}</td>
+                <td>{{usuario.salario | currency:'USD'}}</td>
+            </tr>
+        </ng-container>
+
+    </tbody>
+</table>
