@@ -1,0 +1,99 @@
+<div class="container">
+    <span style="text-align: center">
+    <h3>Datos Colaborador</h3>
+  </span>
+    <form [formGroup]="frmEmpleado">
+        <div class="form-group">
+            <input type="text" class="form-control" formControlName="nombreColaborador" [ngClass]="{
+          'is-invalid':
+            frmEmpleado.get('nombreColaborador')?.touched &&
+            frmEmpleado.get('nombreColaborador')?.invalid
+        }" placeholder="Nombre Colaborador" required />
+
+            <span class="invalid-feedback m-0 p-1" role="alert" *ngIf="frmEmpleado.get('nombreColaborador')?.touched &&  frmEmpleado.get('nombreColaborador')?.errors?.['required']">
+        el campo es requerido
+      </span>
+            <span class="invalid-feedback" *ngIf="frmEmpleado.get('nombreColaborador')?.touched &&  frmEmpleado.get('nombreColaborador')?.errors?.['minlength']">
+        el nombre del colaborador debe tener max de 3 caracteres
+      </span>
+            <span class="invalid-feedback m-0 p-1" *ngIf="frmEmpleado.get('nombreColaborador')?.errors?.['nameError']">
+        El nombre no cumple con los parámetros establecidos
+      </span>
+        </div>
+        <div class="form-group">
+            <label for="direccion">Dirección</label>
+            <input type="text" class="form-control" placeholder="Direccion" formControlName="direccion" [ngClass]="{
+          'is-invalid':
+            frmEmpleado.get('direccion')?.touched &&
+            frmEmpleado.get('direccion')?.invalid
+        }" placeholder="Direccion" />
+            <span class="invalid-feedback" *ngIf="frmEmpleado.get('direccion')?.errors?.['required']">
+        El dirección es obligatoria
+      </span>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="telefono">Telefono</label>
+                <input type="tel" class="form-control" placeholder="Telefono" formControlName="telefono" [ngClass]="{
+            'is-invalid':
+              frmEmpleado.get('telefono')?.touched &&
+              frmEmpleado.get('telefono')?.invalid
+          }" />
+                <span class="invalid-feedback" *ngIf="frmEmpleado.get('telefono')?.errors?.['required']">
+          El telefono es obligatorio
+        </span>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="correo">Correo</label>
+                <input type="email" class="form-control" placeholder="Correo" formControlName="correo" [ngClass]="{
+            'is-invalid':
+              frmEmpleado.get('correo')?.touched &&
+              frmEmpleado.get('correo')?.invalid
+          }" placeholder="Correo" />
+                <span class="invalid-feedback">
+          <span *ngIf="frmEmpleado.get('correo')?.errors?.['required']">
+            El correo es obligatorio
+          </span>
+                <span *ngIf="frmEmpleado.get('correo')?.errors?.['email']">
+            Debe ingresar in correo válido
+          </span>
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="ciudad">Ciudad</label>
+                <input type="text" class="form-control" placeholder="Ciudad" formControlName="ciudad" [ngClass]="{ 'is-invalid': frmEmpleado.get('ciudad')?.invalid }" placeholder="Ciudad" />
+                <span class="invalid-feedback" *ngIf="frmEmpleado.get('ciudad')?.errors?.['required']">
+          La ciudad es obligatoria
+        </span>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="salario">Salario</label>
+                <input type="number" class="form-control" placeholder="Salario" formControlName="salario" [ngClass]="{ 'is-invalid': frmEmpleado.get('salario')?.invalid }" placeholder="Salario" />
+                <span class="invalid-feedback" *ngIf="frmEmpleado.get('salario')?.errors?.['required']">
+          El salario es obligatorio
+        </span>
+                <span class="invalid-feedback" *ngIf="frmEmpleado.get('salario')?.errors?.['salario']">
+el salario debe estar en el rango definido
+        </span>
+            </div>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" formControlName="nacionalidad" (click)="selectNacionalidad('col')" value="col" />
+            <label class="form-check-label" for="nacionalidad">Colombiana</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" formControlName="nacionalidad" (click)="selectNacionalidad('ext')" value="ext" />
+            <label class="form-check-label" for="extranjera">Extranjera</label>
+        </div>
+        <div class="row" style="margin-top: 20px">
+            <div class="col-md-1">
+                <button type="button" class="btn btn-primary">Guardar</button>
+            </div>
+            <div class="col-md-1">
+                <button type="button" class="btn btn-danger">Cancelar</button>
+            </div>
+        </div>
+    </form>
+</div>

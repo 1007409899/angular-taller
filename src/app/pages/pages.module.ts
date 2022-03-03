@@ -8,8 +8,9 @@ import { InicioComponent } from './inicio/inicio.component';
 import { HomeComponent } from './home/home.component';
 import { GeneroPipe } from '../pipes/genero.pipe';
 import { FiltroUsuarioComponent } from './filtro-usuario/filtro-usuario.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DetalleUsuarioComponent } from './detalle-usuario/detalle-usuario.component';
+import { EmpleadoComponent } from './empleado/empleado.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { DetalleUsuarioComponent } from './detalle-usuario/detalle-usuario.compo
     HomeComponent,
     GeneroPipe,
     FiltroUsuarioComponent,
-    DetalleUsuarioComponent
+    DetalleUsuarioComponent,
+    EmpleadoComponent
 
   ],
   imports: [
@@ -27,6 +29,7 @@ import { DetalleUsuarioComponent } from './detalle-usuario/detalle-usuario.compo
     PagesRoutingModule,
     SharedModule,
     FormsModule,
+    ReactiveFormsModule
 
   ],
 

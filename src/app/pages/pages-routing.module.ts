@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DetalleUsuarioComponent } from './detalle-usuario/detalle-usuario.component';
+import { EmpleadoComponent } from './empleado/empleado.component';
 import { HomeComponent } from './home/home.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { ListaUsuariosComponent } from './lista-usuarios/lista-usuarios.component';
@@ -19,14 +20,19 @@ const routes: Routes = [
         component: ListaUsuariosComponent
 
       }, {
+
+        path: "usuarios/:id",
+        component: DetalleUsuarioComponent
+      },
+      {
         path: "",
         redirectTo: "home",
         pathMatch: "full"
 
-      }, {
-
-        path: "usuarios/:id",
-        component: DetalleUsuarioComponent
+      },
+      {
+        path: "empleados",
+        component: EmpleadoComponent
       }
     ]
   },
