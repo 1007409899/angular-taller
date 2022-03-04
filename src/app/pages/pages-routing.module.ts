@@ -4,6 +4,7 @@ import { DetalleUsuarioComponent } from './detalle-usuario/detalle-usuario.compo
 import { EmpleadoComponent } from './empleado/empleado.component';
 import { HomeComponent } from './home/home.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { ListaClientesComponent } from './lista-clientes/lista-clientes.component';
 import { ListaUsuariosComponent } from './lista-usuarios/lista-usuarios.component';
 
 const routes: Routes = [
@@ -23,6 +24,11 @@ const routes: Routes = [
 
         path: "usuarios/:id",
         component: DetalleUsuarioComponent
+      },
+     {
+
+        path: "clientes",
+        component: ListaClientesComponent
       },
       {
         path: "",

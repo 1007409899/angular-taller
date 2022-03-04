@@ -11,6 +11,7 @@ import { FiltroUsuarioComponent } from './filtro-usuario/filtro-usuario.componen
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DetalleUsuarioComponent } from './detalle-usuario/detalle-usuario.component';
 import { EmpleadoComponent } from './empleado/empleado.component';
+import { ListaClientesComponent } from './lista-clientes/lista-clientes.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { EmpleadoComponent } from './empleado/empleado.component';
     GeneroPipe,
     FiltroUsuarioComponent,
     DetalleUsuarioComponent,
-    EmpleadoComponent
+    EmpleadoComponent,
+    ListaClientesComponent
 
   ],
   imports: [

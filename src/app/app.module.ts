@@ -8,7 +8,7 @@ import { SharedModule } from './shared/shared.module';
 import { InicioComponent } from './pages/inicio/inicio.component';
 import { LoginModule } from './auth/login.module';
 import { PagesModule } from './pages/pages.module';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,6 +20,7 @@ import { PagesModule } from './pages/pages.module';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
+    HttpClientModule
 
 
 

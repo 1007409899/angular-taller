@@ -1,7 +1,23 @@
 img {
-    width: 500px;
-    height: 500px;
-    display: block;
+    padding-top: 30px;
+    width: 430px;
+    height: 300px;
     justify-content: center;
     margin-left: 400px;
+}
+
+.github-corner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 110px;
+    padding-top: 20px;
+    color: rgb(59, 59, 59);
+    font-size: 38px;
+}
+
+.edit {
+    box-shadow: 2px 1px 10px 0px rgba(170, 13, 13, 0.75);
+    background-color: red;
+    color: red;
 }
